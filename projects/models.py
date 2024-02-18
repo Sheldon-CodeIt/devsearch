@@ -28,7 +28,6 @@ class Review(models.Model):
         ('up', 'up'),
         ('down', 'down'),
     )
-
     #owner = 
     project = models.ForeignKey(Project, on_delete=models.CASCADE, null=True, blank=True)
     body = models.TextField(null=True, blank=True)
@@ -38,7 +37,7 @@ class Review(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
-        return self.value()
+        return self.value
 
 
 class Tag(models.Model):

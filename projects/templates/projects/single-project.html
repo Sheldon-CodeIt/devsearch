@@ -4,6 +4,20 @@
 
 <h1>{{ project.title }}</h1>
 
+{% for tag in tags %}
+    <span style="border: 1px solid #888; border-radius: 10px; padding: 4px;">{{ tag }}</span>
+{% endfor %}
+
+<hr>
+
 <p>{{ project.description }}</p>
+
+<hr>
+
+<h3>Reviews:</h3>
+
+{% for review in reviews %}
+    <p>{{ review.body }}</p>
+{% endfor %}
 
 {% endblock content %}

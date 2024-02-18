@@ -8,7 +8,6 @@
 <table>
     <thead>
         <tr>
-            <th>ID</th>
             <th>Title</th>
             <th>Description</th>
         </tr>
@@ -18,8 +17,7 @@
 
         {% for project in projects %}
             <tr>
-                <td>{{ project.id }}</td>
-                <td>{{ project.title }} {% if project.topRated %} <strong>TOP RATED</strong> {% endif %}</td>
+                <td><a href="{% url 'project' project.id %}">{{ project.title }} {% if project.topRated %} <a/><strong>TOP RATED</strong> {% endif %}</td>
                 <td>{{ project.description }}</td>
             </tr>
         {% endfor %}
