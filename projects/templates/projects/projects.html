@@ -5,5 +5,28 @@
 
 <h1>Projects</h1>
 
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit inventore veniam error ab? Vero cum nihil modi aperiam eveniet temporibus corrupti laborum ad. Eos, voluptate! Voluptates excepturi rem cum iure exercitationem nihil amet praesentium?</p>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        {% for project in projects %}
+            <tr>
+                <td>{{ project.id }}</td>
+                <td>{{ project.title }} {% if project.topRated %} <strong>TOP RATED</strong> {% endif %}</td>
+                <td>{{ project.description }}</td>
+            </tr>
+        {% endfor %}
+
+    </tbody>
+        
+</table>
+
+
 {% endblock content %}
